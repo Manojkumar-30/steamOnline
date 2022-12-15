@@ -1,0 +1,27 @@
+.navbarmain{
+    margin: 0px 12px ;
+    background-color: rgba(32, 22, 81, 0.93);
+    border-radius: 10px;
+}
+.collapse{
+    margin-left: 20px;
+}
+.collapse li a{
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+.collapse li a:hover{
+    color: grey;
+}
+.search{
+    color: white;
+    background-color: blue;
+}
+i{
+    margin: 15px;
+    margin-left: 15px;
+    font-size: 25px;
+   color: rgba(255, 255, 255, 0.764);
+   cursor:pointer;
+}

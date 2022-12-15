@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="login">
+    <form class="col-md-4" #loginForm="ngForm">
+        <img class="mb-3" src="../../../assets/Images/logo.png" alt="" width="72" height="57">
+        <h1 class="mb-4 fw-normal">Admin login</h1>
+        <div class="form-floating">
+          <input type="email" name="email" [(ngModel)]="loginData.email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required="required" placeholder="name@example.com">
+          <label>Email address</label>
+          <small [class.d-none]="email.valid || email.untouched">*Enter Valid Email</small>
+  
+        </div>
+        <div class="form-floating">
+          <input type="password" name="password" [(ngModel)]="loginData.password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched"  class="form-control" required="required" placeholder="Password">
+          <label>Password</label>
+          <small [class.d-none]="password.valid || password.untouched">*Enter Vaild Password</small>
+        </div>
+      
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me"><span> Remember Me</span>
+            </label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" [disabled]="loginForm.invalid" (click)="loginAdmin()">Login</button>
+          <p class="mt-5 mb-3 text-muted">© steamOnline-2022</p>
+    </form>
+    </div>
+  

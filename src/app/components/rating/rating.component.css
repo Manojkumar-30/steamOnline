@@ -1,0 +1,32 @@
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  } 
+  .star i {
+    color: rgb(241, 0, 76);
+  }
+  h1{
+    color:rgb(211, 216, 220);
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    font-weight: 600;    
+    text-align: center;
+    }
+.rating button{
+    padding: 10px 20px;
+    background-color: rgba(46, 46, 238, 0.844);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    margin-right: 25px;
+    margin-top: 1.5rem;
+    transition: all 250ms;
+}
+.rating button:hover{
+    background-color: rgba(240, 248, 255, 0.674);
+}
+

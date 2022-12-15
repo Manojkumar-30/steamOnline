@@ -1,0 +1,39 @@
+.base{
+    background-image: url(../../../assets/Images/home_map.png);
+    height: 92vh;  
+}
+.base h4 {
+ color: azure;
+ padding-top: 60vh;
+ text-align:center;
+ color:rgb(211, 216, 220);
+ -webkit-text-stroke: 1px white;
+ -webkit-text-fill-color: transparent;
+ font-size: 80px;
+ font-weight: 900;    
+ text-align: center;
+}
+.base p{
+    color:rgb(148, 154, 154);
+    text-align: center;
+    font-weight: 700;
+}
+.base2{
+    display: flex;
+    justify-content: center;  
+}
+.base2 img{
+    border-radius: 20px;
+    margin: 20px;
+}
+.footer{
+    text-align: center;
+    margin-top: 5px;
+    color: white;
+}
+.divide{
+    background-color: white;
+    width:100%;
+    height:1px;
+    margin-top: 3rem;
+}

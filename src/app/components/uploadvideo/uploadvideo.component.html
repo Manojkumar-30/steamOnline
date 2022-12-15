@@ -1,0 +1,62 @@
+<div class="videouploading">
+<form class="col-md-4">
+    <h3>Upload video</h3>
+    <div class="form-floating">
+        <input type="text" #title (change)="onSelectedTitle(title.value)" class="form-control" placeholder="Title name">
+        <label>Title name</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" #desc (change)="onSelectedDesc(desc.value)" class="form-control" placeholder="Description">
+        <label>Description</label>
+    </div>
+    <div class="form-floating">
+        <input type="text" #author (change)="onSelectedAuthor(author.value)" class="form-control" placeholder="Author">
+        <label>Author</label>
+    </div>
+    <div class="form-floating">
+        <select class="form-select" #category (change)="onSelectedCatagory(category.value)" ria-label="Default select example">
+            <option selected>Select category</option>
+            <option value="movies">Movies</option>
+            <option value="sports">Sports</option>
+            <option value="music">Music</option>
+            <option value="gaming">Gaming</option>
+        </select>
+    </div>
+    <div class="form">
+        <label>Video</label>
+        <input type="file" #singleInput (change)="onSelectVideo($event)" class="form-control" placeholder="Video">
+    </div>
+    <div class="form">
+        <label>Subtitle</label>
+        <input type="file" #subtitle (change)="onSelectSubtitle(subtitle.value)" class="form-control" placeholder="Subtitle">
+    </div>
+    <div class="form">
+        <label>Thumbnail</label>
+        <input type="file" #thumbnail (change)="onSelectThumbnail(thumbnail.value)" class="form-control" placeholder="Subtitle">
+    </div>
+    <button class='btn '(click)="uploadVideo()">Submit</button>
+
+
+
+
+<!-- Changes made after this to me removed -->
+<ng-template [ngIf]="displayVideo" [ngIfElse]="elseVideoTemplate">
+    <div>Video uploaded</div>
+    <ul>
+         <li *ngFor="let video of  displayVideoArray">
+            <!-- <video src="http://localhost:3000/{{video}}"/> -->
+            <video controls><source src="http://localhost:3000/{{video}}" height="100" /></video>
+            <!-- <img src="http://localhost:3000/{{video}}" alt=""> -->
+         </li>
+
+    </ul>
+</ng-template>
+<ng-template #elseVideoTemplate>
+    <br/><br/>
+    <div>Please upload some videos</div>
+
+</ng-template>
+
+</form>
+
+</div>

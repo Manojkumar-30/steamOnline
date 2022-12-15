@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="signup">
+<form class="col-md-4" #signupForm="ngForm">
+    <img class="mb-3" src="../../../assets/Images/logo.png" alt="" width="72" height="57">
+    <h1 class="mb-4 fw-normal">Register here</h1>
+    <div class="form-floating">
+        <input type="text" name="firstname" [(ngModel)]="signupData.firstname" #firstname="ngModel" [class.is-invalid]="firstname.invalid && firstname.touched" class="form-control" required="required" placeholder="First Name">
+        <label>First Name</label>
+        <small [class.d-none]="firstname.valid || firstname.untouched">*Enter your First name</small>
+    </div>
+    <div class="form-floating">
+        <input type="text" name="lastname" [(ngModel)]="signupData.lastname" #lastname="ngModel" [class.is-invalid]="lastname.invalid && lastname.touched" class="form-control" required="required" placeholder="Last Name">
+        <label>Last Name</label>
+        <small [class.d-none]="lastname.valid || lastname.untouched">*Enter your Last name</small>
+
+    </div>
+    <div class="form-floating">
+        <input type="email" name="email" [(ngModel)]="signupData.email" #email="ngModel" [class.is-invalid]="email.invalid && email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" required="required" placeholder="name@example.com">
+        <label>Email address</label>
+        <small [class.d-none]="email.valid || email.untouched">*Enter vaild email</small>
+
+      </div>
+      <div class="form-floating">
+        <input type="password" name="password" [(ngModel)]="signupData.password" #password="ngModel" [class.is-invalid]="password.invalid && password.touched" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}"  class="form-control" required="required" placeholder="Password">
+        <label>Password</label>
+        <small [class.d-none]="password.valid || password.untouched">*Enter vaild password</small>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" name="checkbox" [(ngModel)]="signupData.checkbox" #checkbox="ngModel" [class.is-invalid]="checkbox.invalid && checkbox.touched" required="required" value="remember-me"><span> Verify you are 13+ Above</span>
+        </label>
+        <small [class.d-none]="checkbox.valid || checkbox.untouched">*Please verify before you signup</small>
+
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" [disabled]="signupForm.invalid" (click)="signUp()"  >Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© steamOnline-2022</p>
+</form>
+</div>

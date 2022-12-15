@@ -1,0 +1,15 @@
+.header{
+    display:flex;
+}
+.space{
+    flex:1 1 auto;
+}
+button{
+    color: white;
+    margin-right: 30px;
+    margin-top: 1em;
+}
+button:hover{
+    color: rgb(125, 125, 131);
+    background-color: aliceblue;
+}
