@@ -1,12 +1,13 @@
 <div class="main">
   <div class="wrapper">
       <div class="card" (click)="VideoDetails(video)"  *ngFor="let video of videoData">
-          <img src="{{video.video}}" alt="">
+          <img src="http://localhost:3000/{{video.video}}" alt="" />
+          <!-- <video src="http://localhost:3000/{{video.video}}" controls></video> -->
           <div class="descriptions">
               <h1>{{video.title}}</h1>
               <p>{{video.desc}}</p>
               <h6>Rating</h6>
-              <button>
+              <button (click)="VideoDetails(video)">
                   Watch
               </button>
           </div>

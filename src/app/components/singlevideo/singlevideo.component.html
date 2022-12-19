@@ -27,12 +27,13 @@
         </vg-player> 
     </div>   
     <div class="contents">
-        <h3>Black panther</h3>
-        <p>Queen Ramonda (Angela Bassett), Shuri (Letitia Wright), MBaku (Winston Duke), Okoye (Danai Gurira) and the Dora Milaje (including Florence Kasumba), fight to protect their nation from intervening world powers in the wake of King Ts death.</p>
+        <h3>{{videoDetail.title}}</h3>
+        <p>{{videoDetail.desc}}</p>
+        <p>{{videoDetail.category}}</p>
         <p>Rating <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i></p>
         <div class="button">
-                <button>Rate</button>
-                <button>Delete</button>
+                <button (click)="rate()">Rate</button>
+                <button (click)="deleteVideo(videoDetail)">Delete</button>
                 <button class="report">Report</button>
         </div>
     </div>

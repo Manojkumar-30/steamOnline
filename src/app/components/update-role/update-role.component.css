@@ -1,0 +1,27 @@
+
+.update-frm{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+input{
+    width: 400px;
+}
+.update-frm h1{
+    color:rgb(211, 216, 220);
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
+    font-size: 50px;
+    font-weight: 600;    
+    text-align: center;
+}
+label{
+    color: rgb(129, 129, 129);
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.update{
+    background-color: rgba(46, 46, 238, 0.844);
+    color:rgb(214, 219, 224)
+}

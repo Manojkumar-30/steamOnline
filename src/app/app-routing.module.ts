@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
 import { HomeComponent } from './components/home/home.component';
@@ -11,6 +12,7 @@ import { RatingComponent } from './components/rating/rating.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SinglevideoComponent } from './components/singlevideo/singlevideo.component';
+import { UpdateRoleComponent } from './components/update-role/update-role.component';
 import { UploadvideoComponent } from './components/uploadvideo/uploadvideo.component';
 
 const routes: Routes = [
@@ -20,14 +22,16 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'',component:HomeComponent},
   { path: 'dashboard', redirectTo: 'dashboard/homeDashboard', pathMatch:'full' },
-  {path:'dashboard',component:DashboardComponent, 
+  {path:'dashboard',component:DashboardComponent, canActivate:[AuthGuard] ,
+
   children:[
     {path:'homeDashboard',component:HomeDashboardComponent},
     {path:'singlevideo',component:SinglevideoComponent},
     {path:'uploadvideo',component:UploadvideoComponent},
     {path:'rating',component:RatingComponent},
     {path:'navbar',component:NavbarComponent},
-    {path:'settings',component:SettingsComponent}
+    {path:'settings',component:SettingsComponent},
+    {path:'updaterole',component:UpdateRoleComponent}
   ]},
 
 ];

@@ -19,11 +19,16 @@ import { RatingComponent } from './components/rating/rating.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeDashboardComponent } from './components/home-dashboard/home-dashboard.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AdminLoginComponent } from './components/login/admin-login/admin-login.component';
 import { SuperadminLoginComponent } from './components/login/superadmin-login/superadmin-login.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth.guard';
+import { VideoService } from './services/video.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+import { UpdateRoleComponent } from './components/update-role/update-role.component';
 
 
 
@@ -43,6 +48,7 @@ import { SuperadminLoginComponent } from './components/login/superadmin-login/su
     HomeDashboardComponent,
     AdminLoginComponent,
     SuperadminLoginComponent,
+    UpdateRoleComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,11 @@ import { SuperadminLoginComponent } from './components/login/superadmin-login/su
     MatDialogModule,
     MatTabsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard, VideoService,
+    {provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
